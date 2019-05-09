@@ -9,11 +9,11 @@ initializeClock('clock', deadline);
 })();
 
 function getTimeRemaining(endtime) {
-	var t = Date.parse(endtime) - Date.parse(new Date());
-	var seconds = Math.floor((t / 1000) % 60);
-	var minutes = Math.floor((t / 1000 / 60) % 60);
-	var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-	var days = Math.floor(t / (1000 * 60 * 60 * 24));
+	var t = Date.parse(endtime) - Date.parse(new Date()),
+		seconds = Math.floor((t / 1000) % 60),
+		minutes = Math.floor((t / 1000 / 60) % 60),
+		hours = Math.floor((t / (1000 * 60 * 60)) % 24),
+		days = Math.floor(t / (1000 * 60 * 60 * 24));
 
 	return {
 		'total': t,
@@ -25,11 +25,11 @@ function getTimeRemaining(endtime) {
 }
 
 function initializeClock(id, endtime) {
-	var clock = document.getElementById(id);
-	var daysSpan = clock.querySelector('.days');
-	var hoursSpan = clock.querySelector('.hours');
-	var minutesSpan = clock.querySelector('.minutes');
-	var secondsSpan = clock.querySelector('.seconds');
+	var clock = document.getElementById(id),
+		daysSpan = clock.querySelector('.days'),
+		hoursSpan = clock.querySelector('.hours'),
+		minutesSpan = clock.querySelector('.minutes'),
+		secondsSpan = clock.querySelector('.seconds');
 
 	function updateClock() {
 		var t = getTimeRemaining(endtime);
